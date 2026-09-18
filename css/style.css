@@ -9,7 +9,7 @@
     --text-color: #2D2D2D;
     --text-muted: #666666;
     --white: #FFFFFF;
-    --card-bg: rgba(255, 255, 255, 0.82); /* Semi-transparan 82% */
+    --card-bg: rgba(255, 255, 255, 0.70); /* Semi-transparan 70% */
     --border-color: rgba(255, 255, 255, 0.6);
     --shadow: 0 10px 30px rgba(114, 147, 184, 0.1);
     --shadow-card: 0 15px 35px rgba(0, 0, 0, 0.04);
