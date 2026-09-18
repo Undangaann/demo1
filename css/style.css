@@ -168,7 +168,7 @@ ul {
     color: var(--white);
 }
 
-/* 1. COVER SECTION (DIPERBARUI) */
+/* 1. COVER SECTION */
 .cover-section {
     height: 100vh;
     width: 100vw;
@@ -184,7 +184,7 @@ ul {
     transition: opacity 0.8s cubic-bezier(0.77, 0, 0.175, 1), visibility 0.8s ease;
 }
 
-/* Menggunakan gambar background yang sama dengan halaman utama */
+/* Background cover utama sekarang disamakan dengan background halaman utama */
 .cover-bg {
     position: absolute;
     top: 0;
