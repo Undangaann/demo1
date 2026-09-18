@@ -1,7 +1,7 @@
 :root {
     --bg-color: #FFFFFF;
     --bg-secondary: #FAFAFA;
-    --primary-color: #7293B8; /* Nuansa Biru Lembut selaras tema bunga */
+    --primary-color: #7293B8; 
     --primary-dark: #4A6B8A;
     --accent-floral-1: #7293B8; 
     --accent-floral-2: #B388FF; 
@@ -9,8 +9,8 @@
     --text-color: #2D2D2D;
     --text-muted: #666666;
     --white: #FFFFFF;
-    --card-bg: rgba(255, 255, 255, 0.9); /* Efek semi-transparan agar latar bunga tetap terlihat halus */
-    --border-color: #E2ECF5;
+    --card-bg: rgba(255, 255, 255, 0.82); /* Diubah menjadi semi-transparan 82% */
+    --border-color: rgba(255, 255, 255, 0.6);
     --shadow: 0 10px 30px rgba(114, 147, 184, 0.1);
     --shadow-card: 0 15px 35px rgba(0, 0, 0, 0.04);
     --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -26,9 +26,9 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Latar belakang memenuhi layar dan diam saat discroll */
+/* Latar belakang memenuhi layar, diam saat discroll, dan path lokal diperbaiki */
 body {
-    background-image: url('https://undangaann/demo1/assets/images/background.jpg');
+    background-image: url('./assets/images/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -39,27 +39,6 @@ body {
     font-size: 15px;
     line-height: 1.7;
     overflow-x: hidden;
-}
-
-/* Mengatur agar section transparan */
-.section {
-    padding: 100px 0;
-    position: relative;
-    background-color: transparent; 
-}
-
-/* Mengatur transparansi (semi-transparan) pada kartu konten agar background terlihat */
-.couple-card, 
-.countdown-box, 
-.event-card, 
-.rsvp-form, 
-.wish-card, 
-.gift-card, 
-.gift-address-box {
-    background: rgba(255, 255, 255, 0.82) !important; /* Warna putih dengan transparansi 82% */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 h1, h2, h3, .couple-names, .subtitle {
@@ -87,10 +66,11 @@ ul {
     z-index: 2;
 }
 
+/* Section dibuat transparan agar background body terlihat jelas */
 .section {
     padding: 100px 0;
     position: relative;
-    background-color: transparent; /* Transparan agar background utama tetap terlihat anggun */
+    background-color: transparent !important; 
 }
 
 .text-center {
@@ -103,6 +83,21 @@ ul {
 
 .w-100 {
     width: 100%;
+}
+
+/* KARTU KONTEN DENGAN EFEK Kaca (Glassmorphism Transparan) */
+.couple-card, 
+.countdown-box, 
+.event-card, 
+.rsvp-form, 
+.wish-card, 
+.gift-card, 
+.gift-address-box {
+    background: rgba(255, 255, 255, 0.82) !important; 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: var(--shadow-card);
 }
 
 /* BUTTONS MODERN & ELEGAN */
@@ -357,15 +352,10 @@ ul {
 }
 
 .couple-card {
-    background: var(--card-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     padding: 40px 30px;
     border-radius: 24px;
     text-align: center;
-    box-shadow: var(--shadow-card);
     width: 100%;
-    border: 1px solid var(--border-color);
     position: relative;
     overflow: hidden;
 }
@@ -436,13 +426,9 @@ ul {
 }
 
 .countdown-box {
-    background: var(--card-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     padding: 20px 10px;
     border-radius: 16px;
-    box-shadow: var(--shadow-card);
-    border: 1px solid var(--border-color);
+    text-align: center;
 }
 
 .countdown-box span {
@@ -473,14 +459,9 @@ ul {
 }
 
 .event-card {
-    background: var(--card-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid var(--border-color);
     padding: 35px 30px;
     border-radius: 24px;
     text-align: center;
-    box-shadow: var(--shadow-card);
     position: relative;
 }
 
@@ -662,13 +643,8 @@ ul {
 
 /* 9. RSVP */
 .rsvp-form {
-    background: var(--card-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     padding: 40px 30px;
     border-radius: 24px;
-    box-shadow: var(--shadow-card);
-    border: 1px solid var(--border-color);
 }
 
 .form-group {
@@ -690,7 +666,7 @@ ul {
     border-radius: 12px;
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 14px;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     color: var(--text-color);
     transition: var(--transition);
 }
@@ -720,13 +696,8 @@ ul {
 }
 
 .wish-card {
-    background: var(--card-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     padding: 24px;
     border-radius: 16px;
-    box-shadow: var(--shadow-card);
-    border: 1px solid var(--border-color);
 }
 
 .wish-header {
@@ -767,13 +738,8 @@ ul {
 }
 
 .gift-card {
-    background: var(--card-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid var(--border-color);
     padding: 30px;
     border-radius: 24px;
-    box-shadow: var(--shadow-card);
 }
 
 .gift-card h3 {
@@ -797,13 +763,8 @@ ul {
 }
 
 .gift-address-box {
-    background: var(--card-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     padding: 25px;
     border-radius: 20px;
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow-card);
 }
 
 .gift-address-box h3 {
