@@ -28,7 +28,7 @@ html {
 
 /* Latar belakang memenuhi layar, diam saat discroll, dan path lokal diperbaiki */
 body {
-    background-image: url('./assets/images/background.jpg');
+    background-image: url('https://Undangaann.github.io/demo1/assets/images/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
