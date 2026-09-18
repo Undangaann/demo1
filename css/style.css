@@ -26,19 +26,40 @@ html {
     scroll-behavior: smooth;
 }
 
-/* MENJADIKAN GAMBAR SEBAGAI BACKGROUND UTAMA HALAMAN */
+/* Latar belakang memenuhi layar dan diam saat discroll */
 body {
-    background-color: #F0F4F8; /* Warna cadangan jika gambar gagal render */
-    background-image: url('https://undangaann.github.io/demo1/assets/images/background.jpg');
+    background-image: url('../images/background.jpg')[cite: 6];
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     background-repeat: no-repeat;
-    /* Hapus atau nonaktifkan background-attachment: fixed jika di HP tidak muncul */
+    background-color: #F0F4F8;
     color: var(--text-color);
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 15px;
     line-height: 1.7;
     overflow-x: hidden;
+}
+
+/* Mengatur agar section transparan */
+.section {
+    padding: 100px 0;
+    position: relative;
+    background-color: transparent; 
+}
+
+/* Mengatur transparansi (semi-transparan) pada kartu konten agar background terlihat */
+.couple-card, 
+.countdown-box, 
+.event-card, 
+.rsvp-form, 
+.wish-card, 
+.gift-card, 
+.gift-address-box {
+    background: rgba(255, 255, 255, 0.82) !important; /* Warna putih dengan transparansi 82% */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 h1, h2, h3, .couple-names, .subtitle {
