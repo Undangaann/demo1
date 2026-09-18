@@ -29,7 +29,7 @@ html {
 /* MENJADIKAN GAMBAR SEBAGAI BACKGROUND UTAMA HALAMAN */
 body {
     background-color: #F0F4F8; /* Warna cadangan jika gambar gagal render */
-    background-image: url('https://undangaann.github.io/demo1/images/background.jpg');
+    background-image: url('https://undangaann.github.io/demo1/assets/images/background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
