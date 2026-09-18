@@ -28,7 +28,7 @@ html {
 
 /* Latar belakang memenuhi layar dan diam saat discroll */
 body {
-    background-image: url('../images/background.jpg')[cite: 6];
+    background-image: url('https://undangaann/demo1/assets/images/background.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
