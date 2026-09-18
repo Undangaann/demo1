@@ -28,11 +28,12 @@ html {
 
 /* MENJADIKAN GAMBAR SEBAGAI BACKGROUND UTAMA HALAMAN */
 body {
+    background-color: #F0F4F8; /* Warna cadangan jika gambar gagal render */
     background-image: url('../images/background.jpg')[cite: 6];
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     background-repeat: no-repeat;
+    /* Hapus atau nonaktifkan background-attachment: fixed jika di HP tidak muncul */
     color: var(--text-color);
     font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: 15px;
