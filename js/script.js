@@ -342,3 +342,36 @@ function initScrollAnimations() {
 
     elements.forEach(el => observer.observe(el));
 }
+// Fungsi untuk membuat kelopak bunga beterbangan otomatis
+function createFlowers() {
+    const flowerContainer = document.createElement('div');
+    flowerContainer.className = 'flower-container';
+    document.body.appendChild(flowerContainer);
+
+    const flowerCount = 20; // Jumlah bunga yang turun bersamaan
+
+    for (let i = 0; i < flowerCount; i++) {
+        const flower = document.createElement('div');
+        flower.className = 'flower';
+
+        // Posisi acak dan ukuran acak
+        flower.style.left = Math.random() * 100 + 'vw';
+        const size = Math.random() * 8 + 8; // Ukuran antara 8px - 16px
+        flower.style.width = size + 'px';
+        flower.style.height = size + 'px';
+
+        // Kecepatan jatuh acak agar terlihat natural
+        const duration = Math.random() * 5 + 5; // Durasi 5 - 10 detik
+        flower.style.animationDuration = duration + 's';
+        
+        // Waktu mulai acak
+        flower.style.animationDelay = Math.random() * 5 + 's';
+
+        flowerContainer.appendChild(flower);
+    }
+}
+
+// Jalankan fungsi saat halaman dimuat
+document.addEventListener('DOMContentLoaded', () => {
+    createFlowers();
+});
