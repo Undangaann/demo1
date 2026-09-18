@@ -1,0 +1,919 @@
+:root {
+    --bg-color: #FFFFFF;
+    --bg-secondary: #FAFAFA;
+    --primary-color: #D4AF37; /* Soft Gold Mewah */
+    --primary-dark: #AA8C2C;
+    --accent-floral-1: #FF8DA1; /* Pink Bunga */
+    --accent-floral-2: #B388FF; /* Ungu Lavender */
+    --accent-floral-3: #FFD54F; /* Kuning Emas Bunga */
+    --text-color: #2D2D2D;
+    --text-muted: #666666;
+    --white: #FFFFFF;
+    --card-bg: #FFFFFF;
+    --border-color: #F0E6D2;
+    --shadow: 0 10px 30px rgba(212, 175, 55, 0.08);
+    --shadow-card: 0 15px 35px rgba(0, 0, 0, 0.04);
+    --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, .couple-names, .subtitle {
+    font-family: 'Playfair Display', serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 2;
+}
+
+.section {
+    padding: 100px 0;
+    position: relative;
+    background-color: var(--bg-color);
+}
+
+/* DEKORASI BUNGA WARNA-WARNI DI HALAMAN */
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 5% 10%, rgba(255, 141, 161, 0.12) 0%, transparent 20%),
+        radial-gradient(circle at 95% 85%, rgba(179, 136, 255, 0.1) 0%, transparent 25%),
+        radial-gradient(circle at 90% 15%, rgba(255, 213, 79, 0.12) 0%, transparent 20%),
+        radial-gradient(circle at 10% 90%, rgba(129, 199, 132, 0.1) 0%, transparent 25%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-3 {
+    margin-top: 1.5rem;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+/* BUTTONS MODERN & MEWAH */
+.btn-primary {
+    background: linear-gradient(135deg, #E6C594 0%, #C5A059 100%);
+    color: var(--white);
+    padding: 14px 32px;
+    border-radius: 50px;
+    border: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(197, 160, 89, 0.3);
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(197, 160, 89, 0.4);
+    background: linear-gradient(135deg, #D4AF37 0%, #AA8C2C 100%);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #C5A059;
+    padding: 12px 28px;
+    border-radius: 50px;
+    border: 1.5px solid #C5A059;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-secondary:hover {
+    background-color: #C5A059;
+    color: var(--white);
+}
+
+/* 1. COVER SECTION (Mewah & Bernuansa Floral Putih) */
+.cover-section {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    transition: opacity 0.8s cubic-bezier(0.77, 0, 0.175, 1), visibility 0.8s ease;
+}
+
+.cover-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+    filter: brightness(0.9);
+}
+
+.cover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(20,20,20,0.3), rgba(20,20,20,0.75));
+    z-index: -1;
+}
+
+.cover-content .subtitle {
+    font-size: 14px;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+    color: #E6C594;
+    text-transform: uppercase;
+}
+
+.cover-content h1 {
+    font-size: 3.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+.wedding-date {
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin-bottom: 35px;
+    color: #f0f0f0;
+}
+
+.guest-box {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 18px 28px;
+    border-radius: 16px;
+    margin-bottom: 35px;
+    display: inline-block;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.guest-box p {
+    font-size: 12px;
+    margin-bottom: 6px;
+    color: #e0e0e0;
+    letter-spacing: 0.5px;
+}
+
+.guest-box h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+/* BOTTOM NAVIGATION (Floating Pill Modern) */
+.bottom-nav {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 8px 18px;
+    border-radius: 40px;
+    display: flex;
+    gap: 12px;
+    z-index: 999;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.nav-item {
+    color: #888;
+    font-size: 10px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 14px;
+    border-radius: 30px;
+    transition: var(--transition);
+}
+
+.nav-item i {
+    font-size: 16px;
+}
+
+.nav-item.active, .nav-item:hover {
+    color: var(--white);
+    background: linear-gradient(135deg, #E6C594 0%, #C5A059 100%);
+    box-shadow: 0 5px 15px rgba(197, 160, 89, 0.3);
+}
+
+/* MUSIC PLAYER */
+.music-player {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    z-index: 999;
+}
+
+#music-toggle-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #E6C594 0%, #C5A059 100%);
+    color: var(--white);
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(197, 160, 89, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+#music-toggle-btn.playing {
+    animation: rotateDisc 3s linear infinite;
+}
+
+@keyframes rotateDisc {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* SECTION TYPOGRAPHY MEWAH */
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title .subtitle {
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #C5A059;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.section-title h2 {
+    font-size: 2.8rem;
+    color: var(--text-color);
+    letter-spacing: -0.5px;
+}
+
+/* 2. INTRODUCTION */
+.intro-section {
+    background-color: var(--bg-secondary);
+}
+
+.arabic-text {
+    font-size: 1.8rem;
+    color: #C5A059;
+    margin-bottom: 24px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.intro-desc {
+    color: var(--text-muted);
+    font-size: 15px;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+/* 3. COUPLE SECTION */
+.couple-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+}
+
+.couple-card {
+    background: var(--card-bg);
+    padding: 40px 30px;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: var(--shadow-card);
+    width: 100%;
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Aksen Bunga Sudut Kartu Couple */
+.couple-card::after {
+    content: '🌸';
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 18px;
+    opacity: 0.6;
+}
+
+.photo-wrapper {
+    width: 190px;
+    height: 190px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 5px;
+    background: linear-gradient(135deg, #E6C594, #FF8DA1, #B388FF);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.photo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.couple-card h3 {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+    color: #2D2D2D;
+}
+
+.parent-info {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.ig-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #C5A059;
+    font-weight: 600;
+    background: rgba(197, 160, 89, 0.08);
+    padding: 8px 18px;
+    border-radius: 20px;
+    transition: var(--transition);
+}
+
+.ig-link:hover {
+    background: #C5A059;
+    color: var(--white);
+}
+
+.couple-divider {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #C5A059;
+    margin: -25px 0;
+    font-style: italic;
+}
+
+/* 4. COUNTDOWN */
+.countdown-section {
+    background: linear-gradient(to bottom, var(--bg-color), var(--bg-secondary));
+}
+
+.countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.countdown-box {
+    background: var(--white);
+    padding: 20px 10px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--border-color);
+}
+
+.countdown-box span {
+    display: block;
+}
+
+.countdown-box span:first-child {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    color: #C5A059;
+}
+
+.countdown-box .label {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 5px;
+    font-weight: 600;
+}
+
+/* 5. EVENT */
+.event-section {
+    background-color: var(--bg-secondary);
+}
+
+.event-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.event-card {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    padding: 35px 30px;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: var(--shadow-card);
+    position: relative;
+}
+
+.event-card h3 {
+    font-size: 2rem;
+    color: #2D2D2D;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+.event-details p {
+    margin-bottom: 12px;
+    font-size: 14.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--text-color);
+}
+
+.event-details p i {
+    color: #C5A059;
+    font-size: 16px;
+}
+
+.event-details .address {
+    color: var(--text-muted);
+    font-size: 13.5px;
+    margin-bottom: 25px;
+}
+
+/* 6. LOVE STORY */
+.story-section {
+    background-color: var(--bg-color);
+}
+
+.timeline {
+    position: relative;
+    padding-left: 25px;
+    border-left: 2px dashed #E6C594;
+    margin-left: 10px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 25px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -32px;
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #C5A059;
+    border: 3px solid var(--white);
+    box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.2);
+}
+
+.timeline-year {
+    font-size: 13px;
+    font-weight: 700;
+    color: #C5A059;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.timeline-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 6px 0 8px;
+    color: #2D2D2D;
+}
+
+.timeline-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+/* 7. GALLERY */
+.gallery-section {
+    background-color: var(--bg-secondary);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+@media (min-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.gallery-item {
+    border-radius: 16px;
+    overflow: hidden;
+    height: 220px;
+    box-shadow: var(--shadow-card);
+    cursor: pointer;
+    border: 2px solid var(--white);
+    transition: var(--transition);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+/* LIGHTBOX */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10,10,10,0.92);
+    z-index: 10000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    color: #fff;
+    font-size: 35px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.lightbox-close:hover {
+    color: #C5A059;
+}
+
+.lightbox-prev, .lightbox-next {
+    position: absolute;
+    background: rgba(255,255,255,0.15);
+    border: none;
+    color: white;
+    padding: 14px 18px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.lightbox-prev:hover, .lightbox-next:hover {
+    background: #C5A059;
+}
+
+.lightbox-prev { left: 25px; }
+.lightbox-next { right: 25px; }
+
+/* 8. LOCATION */
+.location-section {
+    background-color: var(--bg-color);
+}
+
+.map-wrapper {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    border: 2px solid var(--border-color);
+}
+
+/* 9. RSVP */
+.rsvp-section {
+    background-color: var(--bg-secondary);
+}
+
+.rsvp-form {
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 24px;
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--border-color);
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13.5px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1.5px solid #E6DCD0;
+    border-radius: 12px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 14px;
+    background: var(--bg-secondary);
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #C5A059;
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(197, 160, 89, 0.1);
+}
+
+.rsvp-status {
+    margin-top: 15px;
+    font-size: 13.5px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* 10. WISHES */
+.wishes-section {
+    background-color: var(--bg-color);
+}
+
+.wishes-container {
+    max-height: 420px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-right: 5px;
+}
+
+.wish-card {
+    background: var(--bg-secondary);
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--border-color);
+}
+
+.wish-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.wish-name {
+    font-weight: 700;
+    font-size: 14.5px;
+    color: #2D2D2D;
+}
+
+.wish-date {
+    font-size: 11.5px;
+    color: var(--text-muted);
+}
+
+.wish-text {
+    font-size: 13.5px;
+    color: var(--text-muted);
+}
+
+/* 11. GIFT */
+.gift-section {
+    background-color: var(--bg-secondary);
+}
+
+.gift-desc {
+    font-size: 14.5px;
+    color: var(--text-muted);
+    max-width: 520px;
+    margin: 0 auto 35px;
+}
+
+.gift-cards-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.gift-card {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: var(--shadow-card);
+}
+
+.gift-card h3 {
+    font-size: 1.8rem;
+    color: #2D2D2D;
+    margin-bottom: 12px;
+}
+
+.account-number {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 6px;
+    color: #C5A059;
+}
+
+.account-name {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    margin-bottom: 22px;
+}
+
+.gift-address-box {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-card);
+}
+
+.gift-address-box h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #2D2D2D;
+}
+
+.gift-address-box p {
+    font-size: 13.5px;
+    color: var(--text-muted);
+}
+
+/* TOAST */
+.toast {
+    position: fixed;
+    bottom: 95px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: #2D2D2D;
+    color: var(--white);
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 13.5px;
+    font-weight: 500;
+    opacity: 0;
+    transition: var(--transition);
+    z-index: 10001;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+/* 12. CLOSING */
+.closing-section {
+    background: linear-gradient(to top, var(--bg-color), var(--bg-secondary));
+}
+
+.closing-photo {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 25px;
+    padding: 4px;
+    background: linear-gradient(135deg, #E6C594, #FF8DA1, #B388FF);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.closing-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.closing-text {
+    font-size: 14.5px;
+    color: var(--text-muted);
+    max-width: 520px;
+    margin: 0 auto 30px;
+}
+
+.couple-names-closing {
+    font-size: 2.5rem;
+    color: #2D2D2D;
+    margin-bottom: 8px;
+}
+
+.thank-you {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    letter-spacing: 4px;
+    color: #C5A059;
+    font-style: italic;
+}
+
+/* ANIMATIONS CLASS */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-up.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
