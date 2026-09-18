@@ -29,7 +29,7 @@ html {
 /* MENJADIKAN GAMBAR SEBAGAI BACKGROUND UTAMA HALAMAN */
 body {
     background-color: #F0F4F8; /* Warna cadangan jika gambar gagal render */
-    background-image: url('../images/background.jpg')[cite: 6];
+    background-image: url('../images/background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
