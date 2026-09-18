@@ -9,7 +9,7 @@
     --text-color: #2D2D2D;
     --text-muted: #666666;
     --white: #FFFFFF;
-    --card-bg: rgba(255, 255, 255, 0.82); /* Diubah menjadi semi-transparan 82% */
+    --card-bg: rgba(255, 255, 255, 0.82); /* Semi-transparan 82% */
     --border-color: rgba(255, 255, 255, 0.6);
     --shadow: 0 10px 30px rgba(114, 147, 184, 0.1);
     --shadow-card: 0 15px 35px rgba(0, 0, 0, 0.04);
@@ -26,7 +26,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Latar belakang memenuhi layar, diam saat discroll, dan path lokal diperbaiki */
+/* LATAR BELAKANG UTAMA */
 body {
     background-image: url('https://Undangaann.github.io/demo1/assets/images/background.jpg');
     background-size: cover;
@@ -66,7 +66,7 @@ ul {
     z-index: 2;
 }
 
-/* Section dibuat transparan agar background body terlihat jelas */
+/* SECTION TRANSPARAN AGAR BACKGROUND BODY TERLIHAT */
 .section {
     padding: 100px 0;
     position: relative;
@@ -85,7 +85,7 @@ ul {
     width: 100%;
 }
 
-/* KARTU KONTEN DENGAN EFEK Kaca (Glassmorphism Transparan) */
+/* EFEK KACA (GLASSMORPHISM) PADA SEMUA KOTAK KARTU INFORMASI */
 .couple-card, 
 .countdown-box, 
 .event-card, 
@@ -93,14 +93,14 @@ ul {
 .wish-card, 
 .gift-card, 
 .gift-address-box {
-    background: rgba(255, 255, 255, 0.82) !important; 
+    background: var(--card-bg) !important; 
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.6);
+    border: 1px solid var(--border-color);
     box-shadow: var(--shadow-card);
 }
 
-/* BUTTONS MODERN & ELEGAN */
+/* TOMBOL MODERN & ELEGAN */
 .btn-primary {
     background: linear-gradient(135deg, #92B4EC 0%, #5C82C0 100%);
     color: var(--white);
@@ -851,6 +851,48 @@ ul {
 .fade-up.appear {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* EFEK BUNGA / KELOPAK KECIL BETERBANGAN SESUAI TEMA TEMA */
+.flower-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 998;
+    overflow: hidden;
+}
+
+.flower {
+    position: absolute;
+    top: -10%;
+    background: linear-gradient(135deg, #92B4EC, #5C82C0);
+    border-radius: 150% 0 150% 0;
+    animation: fall linear infinite;
+    opacity: 0.6;
+    box-shadow: 0 0 8px rgba(146, 180, 236, 0.4);
+}
+
+.flower:nth-child(even) {
+    background: linear-gradient(135deg, #E2ECF5, #7293B8);
+    border-radius: 50%;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) translateX(0) rotate(0deg);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(50vh) translateX(40px) rotate(180deg);
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateY(110vh) translateX(-40px) rotate(360deg);
+        opacity: 0;
+    }
 }
 
 /* RESPONSIVE DESIGN FIXES */
